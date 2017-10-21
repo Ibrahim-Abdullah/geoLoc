@@ -13,8 +13,21 @@ var latitude = "";
 //We decide to create a function to handle the 3rd party functions (eg. navigator.geolocation.getCurrentPosition)
 // which we earlier added to the native functions of the javascript
 function onDeviceReady() {
+    cordova.plugins.diagnostic.isLocationAvailable(successCallback, errorCallback);
+    
+}
+
+function successCallback(){
+    alert("DJSDFSD");
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
+
+// onError Callback receives a PositionError object
+//
+function errorCallback(error) {
+    alert('Turn on your GPS Location');
+}
+
 function showLocation(){
     addMarker();
 }
