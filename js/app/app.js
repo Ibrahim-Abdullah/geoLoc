@@ -13,7 +13,6 @@ var latitude = "";
 //We decide to create a function to handle the 3rd party functions (eg. navigator.geolocation.getCurrentPosition)
 // which we earlier added to the native functions of the javascript
 function onDeviceReady() {
-    alert();
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 function showLocation(){
