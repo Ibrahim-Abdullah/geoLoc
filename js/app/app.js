@@ -9,7 +9,7 @@ var latitude = "";
 var markers = [];
 
 //document.addEventListener("deviceready", onDeviceReady, false);
-
+map.addListener('click', function(event) { addMoreMarkers(event.latLng);});
 
 //When device is ready, check if location is enabled.
 function onDeviceReady() {
@@ -81,7 +81,7 @@ function addMarker(){
 
 function addMoreMarkers(latLang){
 
-    var marker = new google.maps.Marker({position: latLong,map: map});
+    var marker = new google.maps.Marker({position:latLong, map: map});
     markers.push(marker);   
 }
 
@@ -103,6 +103,4 @@ function onError(error) {
     longitude = 0.0;
     showMap();
 }
-
-map.addListener('click', function(event) { addMoreMarkers(event.latLng);});
 
