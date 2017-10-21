@@ -6,6 +6,7 @@
 var map = "";
 var longitude = "";
 var latitude = "";
+var markers = [];
 
 //document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -28,7 +29,18 @@ function errorCallback(error) {
 }
 
 function showLocation(){
-    addMarker();
+    var button = document.getElementById("bot");
+
+    if(button.value === "showLocation"){
+        addMarker();
+        button.value = "removeLocation";
+        button.innerHTML = "Remove Location";
+    }
+    else{
+        removeMarker();
+        button.value = "showLocation";
+        button.innerHTML = "Show Location";
+    }
 }
 
 // onSuccess Geolocation
@@ -64,6 +76,23 @@ function addMarker(){
 
     var latLong = new google.maps.LatLng(latitude,longitude);
     var marker = new google.maps.Marker({position: latLong,map: map});
+    markers.push(marker);
+}
+
+function addMoreMarkers(latLang){
+
+    var marker = new google.maps.Marker({position: latLong,map: map});
+    markers.push(marker);   
+}
+
+function removeMarker(){
+    setMapOnAll(null);
+}
+
+function setMapOnAll(map){
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
 }
 
 
@@ -74,3 +103,6 @@ function onError(error) {
     longitude = 0.0;
     showMap();
 }
+
+map.addListener('click', function(event) { addMoreMarkers(event.latLng);});
+
