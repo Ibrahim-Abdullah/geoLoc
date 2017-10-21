@@ -70,6 +70,7 @@ function addMarker(){
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-        'message: ' + error.message + '\n');
+    latitude = 0.0;
+    longitude = 0.0;
+    showMap();
 }
