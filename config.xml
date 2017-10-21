@@ -50,7 +50,14 @@
     <icon src="assets/icon.png" density="hdpi" />
     <icon src="assets/icon.png" density="xdpi" />
     <icon src="assets/icon.png" density="xxdpi" />
-</platform>
+    </platform>
+    <platform name="ios">    
+    <icon src="assets/icon.png" density="mdpi" />
+    <icon src="assets/icon.png" density="ldpi" />
+    <icon src="assets/icon.png" density="hdpi" />
+    <icon src="assets/icon.png" density="xdpi" />
+    <icon src="assets/icon.png" density="xxdpi" />
+    </platform>
 
     <!-- Define app splash screen for each platform. -->
     <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
