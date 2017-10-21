@@ -18,7 +18,6 @@ function onDeviceReady() {
 }
 
 function successCallback(){
-    alert("DJSDFSD");
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
