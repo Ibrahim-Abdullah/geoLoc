@@ -13,7 +13,7 @@
 
   <style type="text/css">
     #map{
-      height:570px;
+      height:370px;
       margin: 0;
       width: 100%;
     }
@@ -26,7 +26,7 @@
       padding:5%;
     }
     .map{
-      height: 80%;
+
     }
 
     html,body{
@@ -57,8 +57,7 @@
   <script type="text/javascript">
     
     $(document).ready(function(){
-      successCallback();
-      //checkAvailability();
+      onDeviceReady();
 
     });
   </script>
@@ -67,18 +66,33 @@
   <body>
     
     <div data-role="page">
-        <div class="row container-fluid col-md-4 text-center locButton">
-          <button onclick="showLocation()" class="btn btn-default">Show Location</button>
-        </div>    	
-    </div><!-- /header -->
+    	<div data-role="header">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">GeoLocation</a>
+            </div>
+          </div>
+        </nav>
+    	</div><!-- /header -->
 
     	<div data-role="content">
+        <div class="row container-fluid col-md-4 text-center locButton">
+            <button onclick="showLocation()" class="btn btn-default">Show Location</button>
+        </div>
 
-        <div id="map" class="container-fluid map ">
+        <div id="map" class="container map">
           
         </div>
 
     	</div><!-- /content -->
+
+
+    	<div data-role="footer">
+    		<footer class="container-fluid text-center">
+          <p>www.geolocation@info.org</p>
+        </footer>
+    	</div><!-- /footer -->
 
     </div><!-- /page -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyThAzeQhWGcMn_V7V7BZXaLgnHIVC53E&callback=successCallback" type="text/javascript"></script>
